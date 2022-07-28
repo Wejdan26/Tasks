@@ -2,6 +2,8 @@
 
 .....................
 
+Task1:
+
 ..How to install Ros on ubuntu..
 
 1/Installation:
@@ -31,6 +33,8 @@ $sudo apt install ros-noetic-desktop-full
 $source /opt/ros/noetic/setup.bash
 
 ...............................................................................................................................
+
+Task3:
 
 ..Install-robot-arm..
 
@@ -69,19 +73,47 @@ $source ~/.bashrc
 
 $roslaunch robot_arm_pkg check_motors.launch
 
-![Uploading تسليم المهمة.jpg…]
-
 ............................................................................................................................
 
+Task 4:
 
+..Configuring Arduino with ROS..
 
+Install Arduino IDE in Ubuntu https://www.arduino.cc/en/software 
 
+to install run $ sudo ./install.sh after unzipping the folder
 
+Install the arduino package and ros library http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
 
+Make sure to change the port permission before uploading the Arduino code $ sudo chmod 777 /dev/ttyUSB0
 
+Controlling the robot arm by joint_state_publisher
 
+$ roslaunch robot_arm_pkg check_motors.launch
 
+connect with hardware by running:
 
+$ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
+
+Simulation
+
+$ roslaunch robot_arm_pkg check_motors.launch
+
+$ roslaunch robot_arm_pkg check_motors_gazebo.launch
+
+$ rosrun robot_arm_pkg joint_states_to_gazebo.py
+
+$ sudo chmod +x ~/catkin_ws/src/arduino_robot_arm/robot_arm_pkg/scripts/joint_states_to_gazebo.py
+
+$ roslaunch moveit_pkg demo.launch
+
+connect with hardware by running:
+
+$ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
+
+Simulation
+
+$ roslaunch moveit_pkg demo_gazebo.launch
 
 
 
