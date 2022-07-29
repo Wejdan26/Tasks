@@ -41,6 +41,7 @@ $source ~/.bashrc
 
 $roslaunch robot_arm_pkg check_motors.launch
 
+![task2](https://user-images.githubusercontent.com/108191242/181657824-80b6ce2c-f3ab-4311-a64e-52e0d7eeadaf.jpg)
 
 
 ............................................................................................................................
